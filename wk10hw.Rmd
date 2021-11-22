@@ -8,8 +8,6 @@ colnames(favorites) <- c("favDessert", "dessertAmt", "dessertRating")
 summary(favorites)
 
 library(ggplot2)
-ggplot(favorites, aes(x=favDessert,y = dessertAmt,fill=dessertRating))+geom_bar(stat="identity")
+ggplot(favorites, aes(favDessert, dessertAmt, fill=dessertRating))+geom_bar(stat="identity")+xlab(label="Favorite Dessert")+ylab(label="Dessert Rating")+labs(fill="Dessert Amount")
 
 ```
-
-
