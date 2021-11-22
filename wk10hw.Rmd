@@ -1,0 +1,15 @@
+```{r }
+library(readr)
+favorites <- read_csv("Book1.csv")
+favorites$`favorite dessert` <- as.factor(favorites$`favorite dessert`)
+favorites$`dessert amount` <- as.factor(favorites$`dessert amount`)
+favorites$`dessert rating` <- as.numeric(favorites$`dessert rating`)
+colnames(favorites) <- c("favDessert", "dessertAmt", "dessertRating")
+summary(favorites)
+
+library(ggplot2)
+ggplot(favorites, aes(x=favDessert,y = dessertAmt,fill=dessertRating))+geom_bar(stat="identity")
+
+```
+
+
